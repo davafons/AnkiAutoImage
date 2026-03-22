@@ -550,7 +550,7 @@ def _on_run(self) -> None:
 				key = str(self.cfg.get("nadeshiko_api_key", "")).strip()
 				if not key:
 					continue
-				base_url = str(self.cfg.get("nadeshiko_base_url", "https://api.brigadasos.xyz/api/v1")).strip() or "https://api.brigadasos.xyz/api/v1"
+				base_url = str(self.cfg.get("nadeshiko_base_url", "https://api.nadeshiko.co/v1")).strip() or "https://api.nadeshiko.co/v1"
 				client = NadeshikoApiClient(key, base_url=base_url)
 				# Ask API for the longest sentence, with a sensible minimum length
 				min_len = int(self.cfg.get("nadeshiko_min_length", 6))
@@ -938,7 +938,7 @@ def quick_add_nadeshiko_for_current_card(mw) -> None:
 		if not key:
 			showWarning("Missing nadeshiko_api_key in config.json")
 			return
-		base_url = str(cfg.get("nadeshiko_base_url", "https://api.brigadasos.xyz/api/v1")).strip() or "https://api.brigadasos.xyz/api/v1"
+		base_url = str(cfg.get("nadeshiko_base_url", "https://api.nadeshiko.co/v1")).strip() or "https://api.nadeshiko.co/v1"
 		client = NadeshikoApiClient(key, base_url=base_url)
 
 		# Optional suffix

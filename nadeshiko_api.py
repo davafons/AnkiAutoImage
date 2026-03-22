@@ -14,13 +14,13 @@ class NadeshikoApiClient:
 	"""Client for the Nadeshiko segment search API (v2).
 
 	OpenAPI summary:
-	- Base URL example: https://api.brigadasos.xyz/api/v1
+	- Base URL example: https://api.nadeshiko.co/v1
 	- POST /search { query: {search}, take, sort, filters, ... }
 	- Response contains "segments" list with urls (imageUrl, audioUrl, videoUrl)
 	- Auth: header Authorization: Bearer <key>
 	"""
 
-	def __init__(self, api_key: str, base_url: str = "https://api.brigadasos.xyz/api/v1") -> None:
+	def __init__(self, api_key: str, base_url: str = "https://api.nadeshiko.co/v1") -> None:
 		if not api_key:
 			raise NadeshikoApiError("Missing Nadeshiko API key")
 		self._base_url = base_url.rstrip("/")
